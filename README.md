@@ -31,6 +31,15 @@ Run the following command to install all the dependencies.
 bundler install
 ```
 
+### Setup TailwindCSS
+
+This project is styled with TailwindCSS. Run the following command to start the
+build process.
+
+```
+./bin/dev
+```
+
 ### Usage
 
 Run the following command to start the server, then go to http://localhost:3000
