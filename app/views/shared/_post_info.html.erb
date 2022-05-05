@@ -1,0 +1,7 @@
+<div class="border p-3 flex flex-col gap-2">
+  <h3 class="text-xl"><%= post.title %></h3>
+  <p><%= post.text %></p>
+  <p class="text-sm self-end">
+    <%= "Comments: #{post.comments_counter || 0}, Likes: #{post.likes_counter || 0}" %>
+  </p>
+</div>
