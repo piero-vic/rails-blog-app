@@ -7,7 +7,18 @@
       </p>
     </div>
     <p><%= @post.text %></p>
+    <div class="flex justify-end">
+      <%= button_to user_post_likes_path(@post.author.id, @post.id), method: :post, class: "py-2 px-3 border rounded-xl" do %>
+        Like
+      <% end %>
+    </div>
   </article>
 
   <%= render partial: "shared/comments", locals: { comments: @post.comments } %>
+
+  <div class="flex justify-end">
+    <%= link_to new_user_post_comment_path(@post.author.id, @post.id), class: "py-2 px-3 border rounded-xl" do %>
+      Post a comment
+    <% end %>
+  </div>
 </div>
