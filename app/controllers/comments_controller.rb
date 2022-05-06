@@ -14,7 +14,7 @@ class CommentsController < ApplicationController
     if comment.save
       redirect_to user_post_path(@user_id, @post_id), notice: 'Comment published'
     else
-      redirect_to user_post_path(@user_id, @post_id), alert: 'Something went wrong'
+      redirect_to new_user_post_comment_path(@user_id, @post_id), alert: comment.errors.full_messages
     end
   end
 

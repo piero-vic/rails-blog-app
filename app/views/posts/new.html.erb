@@ -3,11 +3,11 @@
     <h1 class="text-3xl">Create a new post</h1>
     <div>
       <%= f.label :title, "Title" %>
-      <%= f.text_field :title, required: true, class: "w-full p-2 border" %>
+      <%= f.text_field :title, class: "w-full p-2 border" %>
     </div>
     <div>
-      <%= f.label :text, "Body" %>
-      <%= f.text_area :text, required: true, class: "w-full p-2 border" %>
+      <%= f.label :text, "Text" %>
+      <%= f.text_area :text, class: "w-full p-2 border" %>
     </div>
     <%= f.submit "Publish", class: "self-end py-2 px-3 border rounded-xl" %>
   </div>
