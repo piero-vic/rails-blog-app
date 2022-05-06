@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-5">
   <%= render partial: "shared/user_info", locals: { user: @user } %>
   <ul class="flex flex-col gap-5">
-    <% @user.posts.each do |post| %>
+    <% @posts.each do |post| %>
       <li>
         <%= link_to user_post_path(@user.id, post.id) do %>
           <%= render partial: "shared/post_info", locals: { post: post } %>

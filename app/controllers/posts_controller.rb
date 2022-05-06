@@ -2,6 +2,7 @@ class PostsController < ApplicationController
   def index
     @current_user = current_user
     @user = User.find(params[:user_id])
+    @posts = @user.posts.includes(:comments)
   end
 
   def show
@@ -21,7 +22,7 @@ class PostsController < ApplicationController
     if post.save
       redirect_to user_path(@current_user.id), notice: 'Post published'
     else
-      redirect_to new_user_post_path(@current_user.id), notice: 'Something went wrong'
+      redirect_to new_user_post_path(@current_user.id), alert: post.errors.full_messages
     end
   end
 

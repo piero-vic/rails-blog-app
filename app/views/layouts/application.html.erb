@@ -24,6 +24,19 @@
         </nav>
       </div>
     </header>
+
+    <% flash.each do |type, msg| %>
+      <div class=<%= type == "alert" ? "bg-red-300" : "bg-green-300" %>>
+        <% if msg.instance_of? Array %>
+          <% msg.each do |message| %>
+            <p class="font-bold max-w-screen-lg mx-auto"><%= message %></p>
+          <% end %>
+        <% else %>
+          <p class="font-bold max-w-screen-lg mx-auto"><%= msg %></p>
+        <% end %>
+      </div>
+    <% end %>
+
     <main class="mx-auto max-w-screen-md my-14 px-5">
       <%= yield %>
     </main>
