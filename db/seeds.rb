@@ -7,8 +7,10 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 # Users
-first_user = User.create(name: 'Tom', photo: 'https://randomuser.me/api/portraits/men/75.jpg', bio: 'Teacher from Mexico.')
-second_user = User.create(name: 'Lilly', photo: 'https://randomuser.me/api/portraits/women/75.jpg', bio: 'Teacher from Poland.')
+first_user = User.create(name: 'Tom', photo: 'https://randomuser.me/api/portraits/men/75.jpg', 
+                        bio: 'Teacher from Mexico.', email: 'tom@qwerty.com', password: 'qweqwe123')
+second_user = User.create(name: 'Lilly', photo: 'https://randomuser.me/api/portraits/women/75.jpg', 
+                          bio: 'Teacher from Poland.', email: 'lilly@qwerty.com', password: 'qweqwe123')
 
 # Posts
 first_post = Post.create(author_id: first_user.id, title: 'Hello', text: 'This is my first post')

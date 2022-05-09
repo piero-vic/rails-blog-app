@@ -18,8 +18,10 @@
           Blog App
         <% end %>
         <nav class="flex items-center	">
-          <%= link_to new_user_post_path(@current_user.id)  do %>
-            New Post
+          <% if user_signed_in? %>
+            <%= link_to new_user_post_path(@current_user.id)  do %>
+              New Post
+            <% end %>
           <% end %>
         </nav>
       </div>
