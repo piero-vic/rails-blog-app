@@ -17,10 +17,20 @@
         <%= link_to root_path, class: "text-3xl" do %>
           Blog App
         <% end %>
-        <nav class="flex items-center	">
+        <nav class="flex items-center gap-4">
           <% if user_signed_in? %>
             <%= link_to new_user_post_path(@current_user.id)  do %>
               New Post
+            <% end %>
+            <%= button_to destroy_user_session_path, method: :delete do %>
+              Log Out
+            <% end %>
+          <% else %>
+            <%= link_to new_user_session_path  do %>
+              Log In
+            <% end %>
+            <%= link_to new_user_registration_path  do %>
+              Sign Up
             <% end %>
           <% end %>
         </nav>
