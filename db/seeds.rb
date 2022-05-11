@@ -8,7 +8,8 @@
 
 # Users
 first_user = User.create(name: 'Tom', photo: 'https://randomuser.me/api/portraits/men/75.jpg', 
-                        bio: 'Teacher from Mexico.', email: 'tom@qwerty.com', password: 'qweqwe123')
+                        bio: 'Teacher from Mexico.', email: 'tom@qwerty.com', password: 'qweqwe123',
+                        confirmed_at: DateTime.now)
 second_user = User.create(name: 'Lilly', photo: 'https://randomuser.me/api/portraits/women/75.jpg', 
                           bio: 'Teacher from Poland.', email: 'lilly@qwerty.com', password: 'qweqwe123')
 
