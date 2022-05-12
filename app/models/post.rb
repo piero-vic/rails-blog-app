@@ -14,6 +14,10 @@ class Post < ApplicationRecord
     comments.order(created_at: :desc).limit(5)
   end
 
+  def as_json(_options = {})
+    super(only: %i[id title text likes_counter comments_counter])
+  end
+
   private
 
   def update_author_posts_counter
