@@ -8,7 +8,8 @@ class Api::PostsController < ApplicationController
 
   def show
     @post = Post.find_by(id: params[:id], author_id: params[:user_id])
-    raise ActiveRecord::RecordNotFound, "Wrong post or user id" if @post == nil
+    raise ActiveRecord::RecordNotFound, 'Wrong post or user id' if @post.nil?
+
     render json: @post
   end
 end
