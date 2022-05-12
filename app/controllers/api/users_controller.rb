@@ -1,5 +1,6 @@
 class Api::UsersController < ApplicationController
   include ApiExceptionHandler
+  before_action :authorize_request
 
   def index
     @users = User.all.order(created_at: :asc)
@@ -9,5 +10,9 @@ class Api::UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
     render json: @user
+  end
+
+  def create
+    
   end
 end

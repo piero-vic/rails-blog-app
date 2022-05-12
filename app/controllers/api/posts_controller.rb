@@ -1,6 +1,6 @@
 class Api::PostsController < ApplicationController
   include ApiExceptionHandler
-
+  before_action :authorize_request
   def index
     @user = User.find(params[:user_id])
     render json: @user.posts

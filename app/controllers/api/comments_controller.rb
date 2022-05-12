@@ -1,5 +1,6 @@
 class Api::CommentsController < ApplicationController
   include ApiExceptionHandler
+  before_action :authorize_request
 
   def index
     @post = Post.find_by(id: params[:post_id], author_id: params[:user_id])
