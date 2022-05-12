@@ -1,8 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  subject { User.new(id: 1, name: 'User 1') }
-
+  subject { User.new(name: 'User 1', email: 'test@test.com', password: '123456') }
   before { subject.save }
 
   it 'should have name' do
@@ -27,11 +26,9 @@ RSpec.describe User, type: :model do
 
   describe '#recent_posts' do
     it 'should return 3 posts' do
-      Post.create(author_id: 1, title: 'Hello 1', text: 'This is my first post')
-      Post.create(author_id: 1, title: 'Hello 2', text: 'This is my second post')
-      Post.create(author_id: 1, title: 'Hello 3', text: 'This is my third post')
-      Post.create(author_id: 1, title: 'Hello 4', text: 'This is my fourth post')
-      Post.create(author_id: 1, title: 'Hello 5', text: 'This is my fifth post')
+      (1..5).each do |i|
+        subject.posts.create(title: "Hello #{i}", text: "This is the post number #{i}")
+      end
       expect(subject.recent_posts.length).to eq 3
     end
   end

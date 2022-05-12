@@ -55,6 +55,16 @@ bundle exec rspec               # Run all the tests
 bundle exec rspec spec/models   # Run tests for models
 ```
 
+#### Integration tests
+
+To run the integrations tests, you need to seed the database. Run the following
+commands.
+
+```
+rails db:setup RAILS_ENV=test
+bundle exec rspec spec/features   # Run integration tests
+```
+
 ## Author
 
 👤 **Piero Lescano**

@@ -1,7 +1,7 @@
 <div class="flex flex-col gap-5">
   <article class="border flex flex-col p-3 gap-3">
     <div class="flex justify-between items-baseline">
-      <h1 class="text-2xl"><%= @post.title %></h1>
+      <h1 class="text-2xl"><%= @post.title %> by <%= @post.author.name %></h1>
       <p class="text-sm">
         <%= "Comments: #{@post.comments_counter || 0}, Likes: #{@post.likes_counter || 0 }" %>
       </p>
